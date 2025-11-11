@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Wartungsarbeiten — Bald zurück</title>
- <style>
+   <style>
   :root{
     --bg:#072043;
-    --gold:#f5d77a; /* etwas heller, passend zu deinem Logo */
-    --black-outline: rgba(0,0,0,0.9);
+    --gold:#f5d77a;
   }
 
   html,body{height:100%;margin:0}
@@ -28,9 +27,8 @@
     border: 1px solid rgba(255,255,255,0.03);
   }
 
-  /* Logo */
   .logo {
-    width: 220px; /* größer gemacht */
+    width: 220px;
     height: auto;
     display: block;
     margin: 0 auto 28px;
@@ -38,40 +36,75 @@
   }
 
   h1{
-    font-size:clamp(20px,4vw,36px);margin:8px 0 6px;
+    font-size:clamp(20px,4vw,36px);
+    margin:8px 0 6px;
     letter-spacing:0.6px;
-    -webkit-text-stroke:0.5px var(--black-outline);
-    text-shadow: 0 0 1px var(--black-outline);
     font-weight:600;
     color: var(--gold);
   }
 
   p{
-    margin:0 0 18px;font-size:clamp(14px,2.6vw,18px);line-height:1.45;
-    -webkit-text-stroke:0.3px rgba(0,0,0,0.85);
-    text-shadow: 0 0 0.8px rgba(0,0,0,0.85);
+    margin:0 0 18px;
+    font-size:clamp(14px,2.6vw,18px);
+    line-height:1.45;
     color: var(--gold);
   }
 
-  .small{opacity:0.9;font-size:13px;color:var(--gold)}
-
-  .button{
-    display:inline-block;margin-top:14px;padding:10px 18px;border-radius:10px;
-    background:rgba(212,175,55,0.12);
+  .small{
+    opacity:0.9;
+    font-size:13px;
     color:var(--gold);
-    text-decoration:none;font-weight:600;
-    box-shadow: 0 6px 18px rgba(4,12,32,0.6);
-    border: 1px solid rgba(212,175,55,0.25);
-    -webkit-text-stroke:0.3px rgba(0,0,0,0.9);
   }
 
-  .button:focus{outline:2px dashed rgba(212,175,55,0.35);outline-offset:4px}
+  .button{
+    display:inline-block;
+    margin-top:14px;
+    padding:10px 18px;
+    border-radius:10px;
+    background:rgba(212,175,55,0.12);
+    color:var(--gold);
+    text-decoration:none;
+    font-weight:600;
+    box-shadow: 0 6px 18px rgba(4,12,32,0.6);
+    border: 1px solid rgba(212,175,55,0.25);
+  }
+
+  .button:focus{
+    outline:2px dashed rgba(212,175,55,0.35);
+    outline-offset:4px;
+  }
+
+  footer {
+    text-align:center;
+    margin-top:24px;
+    font-size:13px;
+  }
+
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+    margin: 0 6px;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    max-width:800px;
+    color:var(--gold);
+    display:none;
+  }
+
+  section h2 {
+    color: var(--gold);
+  }
 
   @media (max-width:420px){
     .card{padding:28px}
     .logo{width:160px}
   }
-</style>
+  </style>
 </head>
 <body>
   <main class="card" role="main" aria-labelledby="maint-head">
