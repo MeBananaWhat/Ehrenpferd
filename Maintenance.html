@@ -7,7 +7,7 @@
  <style>
   :root{
     --bg:#072043;
-    --gold:#f5d77a; /* etwas heller, passend zu deinem Logo */
+    --gold:#f5d77a;
     --black-outline: rgba(0,0,0,0.9);
   }
 
@@ -28,9 +28,8 @@
     border: 1px solid rgba(255,255,255,0.03);
   }
 
-  /* Logo */
   .logo {
-    width: 220px; /* größer gemacht */
+    width: 220px;
     height: auto;
     display: block;
     margin: 0 auto 28px;
@@ -67,6 +66,32 @@
 
   .button:focus{outline:2px dashed rgba(212,175,55,0.35);outline-offset:4px}
 
+  footer {
+    text-align:center;
+    margin-top:24px;
+    font-size:13px;
+  }
+
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+    margin: 0 6px;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    max-width:800px;
+    color:var(--gold);
+    display:none;
+  }
+
+  section h2 {
+    color: var(--gold);
+  }
+
   @media (max-width:420px){
     .card{padding:28px}
     .logo{width:160px}
@@ -75,14 +100,96 @@
 </head>
 <body>
   <main class="card" role="main" aria-labelledby="maint-head">
-    <!-- Logo -->
     <img src="EP_Logo__cpl_TBG.png" alt="Ehrenpferd Logo" class="logo">
 
     <h1 id="maint-head">Seite vorübergehend außer Betrieb</h1>
     <p>Wir führen gerade Wartungsarbeiten durch. Die Seite ist momentan nicht verfügbar — wir sind bald zurück.</p>
     <p class="small">Danke für Ihre Geduld. Bei dringenden Anliegen erreichen Sie uns unter <strong>info@ehrenpferd.de</strong>.</p>
 
-    <a class="button" href="https://mebananawhat.github.io/Ehrenpferd/Maintenance.html">Zurück zur Startseite</a>
+    <a class="button" href="https://mebananawhat.github.io/Ehrenpferd/">Zurück zur Startseite</a>
+
+    <footer>
+      <a href="#impressum">Impressum</a> | 
+      <a href="#datenschutz">Datenschutz</a>
+    </footer>
   </main>
+
+  <!-- Impressum -->
+  <section id="impressum">
+    <h2>Impressum</h2>
+    <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+    <p>
+      Max Mustermann<br>
+      Ehrenpferd e.K.<br>
+      Musterstraße 12<br>
+      12345 Musterstadt<br>
+      Deutschland
+    </p>
+    <p><strong>Kontakt:</strong><br>
+      Telefon: +49 (0) 123 456789<br>
+      E-Mail: kontakt@ehrenpferd.de
+    </p>
+    <p><strong>Vertreten durch:</strong><br>
+      Max Mustermann (Inhaber)
+    </p>
+    <p><strong>Umsatzsteuer-ID:</strong><br>
+      DE123456789
+    </p>
+    <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+      Max Mustermann<br>
+      Anschrift wie oben.
+    </p>
+  </section>
+
+  <!-- Datenschutz -->
+  <section id="datenschutz">
+    <h2>Datenschutzerklärung</h2>
+    <p>
+      Diese Website dient ausschließlich der Anzeige von Wartungsinformationen und erhebt keine personenbezogenen Daten.
+    </p>
+    <p><strong>Verantwortlicher:</strong><br>
+      Max Mustermann<br>
+      Ehrenpferd e.K.<br>
+      Musterstraße 12<br>
+      12345 Musterstadt<br>
+      E-Mail: kontakt@ehrenpferd.de
+    </p>
+    <h3>1. Server-Log-Dateien</h3>
+    <p>
+      Der Hostinganbieter (GitHub Pages) kann technische Daten (Browsertyp, Betriebssystem, Zeitpunkt des Zugriffs) speichern. Diese Daten dienen ausschließlich der Sicherstellung des technischen Betriebs.
+    </p>
+    <h3>2. Keine Cookies</h3>
+    <p>Auf dieser Seite werden keine Cookies oder Tracking-Tools verwendet.</p>
+    <h3>3. Rechte der betroffenen Personen</h3>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten gemäß DSGVO. Wenden Sie sich hierzu an die oben genannte E-Mail-Adresse.</p>
+    <h3>4. Hosting</h3>
+    <p>Diese Seite wird über GitHub Pages bereitgestellt. Es gelten die Datenschutzrichtlinien von GitHub:
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.
+    </p>
+    <p><em>Stand: 11. November 2025</em></p>
+  </section>
+
+  <script>
+    const hash = window.location.hash;
+    const main = document.querySelector("main");
+    const impressum = document.getElementById("impressum");
+    const datenschutz = document.getElementById("datenschutz");
+
+    if (hash === "#impressum") {
+      main.style.display = "none";
+      impressum.style.display = "block";
+      document.body.style.alignItems = "flex-start";
+      document.body.style.justifyContent = "flex-start";
+      document.body.style.padding = "40px";
+    }
+
+    if (hash === "#datenschutz") {
+      main.style.display = "none";
+      datenschutz.style.display = "block";
+      document.body.style.alignItems = "flex-start";
+      document.body.style.justifyContent = "flex-start";
+      document.body.style.padding = "40px";
+    }
+  </script>
 </body>
 </html>
