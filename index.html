@@ -29,13 +29,18 @@
       border: 1px solid rgba(255,255,255,0.03);
     }
 
-    /* Icon */
-    .icon{width:96px;height:96px;margin:0 auto 18px;display:block}
+    /* Logo */
+    .logo {
+      width: 160px; /* Passe Größe bei Bedarf an */
+      height: auto;
+      display: block;
+      margin: 0 auto 24px;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.45));
+    }
 
     h1{
       font-size:clamp(20px,4vw,36px);margin:8px 0 6px;
       letter-spacing:0.6px;
-      /* dünner schwarzer Rand: webkit stroke + subtle text-shadow fallback */
       -webkit-text-stroke:0.6px var(--black-outline);
       text-shadow: 0 0 0.8px var(--black-outline);
       font-weight:600;
@@ -56,39 +61,23 @@
       border: 1px solid rgba(212,175,55,0.12);
     }
 
-    /* Accessibility: focus visible */
     .button:focus{outline:2px dashed rgba(212,175,55,0.35);outline-offset:4px}
 
-    /* Small screens spacing */
     @media (max-width:420px){
       .card{padding:28px}
-      .icon{width:76px;height:76px}
+      .logo{width:120px}
     }
   </style>
 </head>
 <body>
   <main class="card" role="main" aria-labelledby="maint-head">
-    <!-- SVG Ausrufezeichen als Icon (skalierbar & in gold) -->
-    <svg class="icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <linearGradient id="g" x1="0" x2="1">
-          <stop offset="0" stop-color="#FFD66B" />
-          <stop offset="1" stop-color="#D4AF37" />
-        </linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="12" fill="rgba(255,255,255,0.03)" />
-      <g transform="translate(12,8)">
-        <circle cx="20" cy="20" r="20" fill="url(#g)" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>
-        <path d="M20 10 L21.6 32.8 A1.6 1.6 0 0 1 20 34.4 A1.6 1.6 0 0 1 18.4 32.8 L20 10z" fill="#071A40"/>
-        <circle cx="20" cy="28" r="1.8" fill="#071A40"/>
-      </g>
-    </svg>
+    <!-- Logo -->
+    <img src="EP_Logo__cpl_TBG.png" alt="Ehrenpferd Logo" class="logo">
 
     <h1 id="maint-head">Seite vorübergehend außer Betrieb</h1>
     <p>Wir führen gerade Wartungsarbeiten durch. Die Seite ist momentan nicht verfügbar — wir sind bald zurück.</p>
     <p class="small">Danke für Ihre Geduld. Bei dringenden Anliegen erreichen Sie uns unter <strong>info@ehrenpferd.de</strong>.</p>
 
-    <!-- Optionaler Button zum Zurück zur Startseite -->
     <a class="button" href="/">Zurück zur Startseite</a>
   </main>
 </body>
